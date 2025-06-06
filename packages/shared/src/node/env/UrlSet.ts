@@ -8,7 +8,7 @@ import { deduplicate, getEnv, trySafe, yes } from '@silverhand/essentials';
 export default class UrlSet {
   public readonly isLocalhostDisabled = yes(getEnv(this.envPrefix + 'DISABLE_LOCALHOST'));
 
-  readonly #port = Number(getEnv(this.envPrefix + 'PORT') || this.defaultPort);
+  readonly #port = Number(getEnv(this.envPrefix + 'APP_PORT') || this.defaultPort);
   readonly #endpoint = getEnv(this.envPrefix + 'ENDPOINT');
 
   /**
